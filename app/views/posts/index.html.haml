@@ -1,1 +1,10 @@
 %h1 Welcome to my blog
+
+= link_to("New Post", new_post_url, class: "btn btn-primary")
+- @posts.each do |post|
+  .post_wrapper
+    %h2= link_to post.title, post
+  %p.date
+  Submitted
+  = time_ago_in_words(post.created_at)
+  ago
