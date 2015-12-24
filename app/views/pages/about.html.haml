@@ -1,0 +1,16 @@
+#page_wrapper
+  #profile_image
+    = image_tag "profile.jpg"
+  #content
+    %h1 Hey, I am Tien Do
+    %p Welcome to week 2 of my 12 Web Apps in 12 Weeks Challenge.
+    %p This week I built a blog in Rails 4. You're actually on the demo application right now. Cool stuff, right!.
+    %p
+      If you'd like to follow along as I learn more Ruby on Rails, find me on Twitter
+      %a{:href => "http://twitter.com/tiendo"} @TienDo
+      or on the web at
+      = succeed "," do
+        %a{:href => "http://tiendo.me"} tiendo.me
+      and get my posts and exclusive content in your inbox by signing up for my newsletter
+      = succeed "." do
+        %a{:href => "http://tiendo.com/1989"} here

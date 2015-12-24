@@ -14,7 +14,7 @@
       %ul
         %li.category Website
         %li= link_to("Blog", root_url)
-        %li About
+        %li= link_to("About", about_path)
       %ul
         %li.category Social
         %li= link_to("Facebook", "https://www.facebook.com/?_rdr=p", target: "blank")
@@ -26,7 +26,12 @@
 
   #main_content
     #header
-      %p= link_to "All Posts", root_path
+      - if current_page?(root_path)
+        %p All Posts
+      - elsif current_page?(about_path)
+        %p About
+      - else
+        = link_to("Back to All Posts", root_url)
       .buttons
         = link_to("New Post", new_post_url, class: "btn btn-default")
         = link_to("Log Out", "#", class: "btn btn-default")
