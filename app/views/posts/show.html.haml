@@ -1,5 +1,15 @@
 #post_content
   %h1.title= @post.title
   %p.body= @post.body
+
+  #comments
+    %h2
+      = @post.comments.count
+      Comments
+    = render @post.comments
+
+    %h3 Add a comment
+    = render(:partial => "comments/form")
+
   = link_to("Edit", edit_post_url(@post), class: "btn btn-default")
   = link_to("Delete", post_url(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default")
