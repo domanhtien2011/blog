@@ -22,6 +22,22 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to(@post)
+    else
+      render :file => "edit"
+    end
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to(root_url)
+  end
+
   private
 
   def find_post

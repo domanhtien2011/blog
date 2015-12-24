@@ -26,7 +26,7 @@
 
   #main_content
     #header
-      %p All Posts
+      %p= link_to "All Posts", root_path
       .buttons
         = link_to("New Post", new_post_url, class: "btn btn-default")
         = link_to("Log Out", "#", class: "btn btn-default")
